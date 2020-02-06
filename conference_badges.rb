@@ -1,9 +1,28 @@
-# Write your code here.
-badge_maker ( "Edsger", "Ada", "Charles", "Alan", "Grace", "Linux", "Martz").
-each do. # (badge_maker) 
-puts 'Hello, my name is # "( badge_maker)".
+
+def badge_maker(name)
+  "Hello, my name is #{name}."
 end
-square_array numbers (1,2,3,4,5,6,7)
-assign_room.each do #( square_array numbers).
-'puts " Hello, my name is "( badge_maker)" ! You will be assigned to room "(square_array)"!.
+
+def batch_badge_creator(attendees)
+  attendees.collect do |name|
+    badge_maker(name)
+  end
+
+end
+
+def assign_rooms(attendees)
+  room=0
+  attendees.collect do |name|
+    room+=1
+    "Hello, #{name}! You'll be assigned to room #{room}!"
+  end
+end
+
+def printer(attendees)
+  batch_badge_creator(attendees).each do |value|
+    puts value
+  end
+  assign_rooms(attendees).each do |value|
+    puts value
+  end
 end
